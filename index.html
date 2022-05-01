@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Function</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            color: white;
+            font: 18px monospace;
+        }
+
+        header {
+            font-size: 1.5rem;
+            text-align: center;
+            text-transform: uppercase;
+            margin-top: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        main label input {
+            margin-left: 1rem;
+        }
+
+        canvas {
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: block;
+            margin: auto;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Particle System</h1>
+    </header>
+
+    <main>
+        <label>Size <input type="range" id="sizeProp" min="1" max="100"></label>
+        <label>Lifetime <input type="range" id="lifetime" min="100"
+                max="3000"></label>
+        <label>Velocity <input type="range" id="vel" min="-30" max="30"></label>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
+    <script src="particle_system.js"></script>
+    <script src="sketch.js"></script>
+
+</body>
+
+</html>
