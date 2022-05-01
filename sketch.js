@@ -7,7 +7,7 @@ function setup() {
 
     particleProps = new ParticleProps(
         mouseX, mouseY, 25, 25,
-        0, 0, 0, 0
+        0, -3, 3, 6
     );
     particleSystem = new ParticleSystem;
 
@@ -24,6 +24,16 @@ function setup() {
     const velSlider = document.getElementById("vel");
     setupSlider(velSlider, particleProps.vel.y, function () {
         particleProps.vel.y = parseInt(this.value);
+    });
+
+    const spreadXSlider = document.getElementById("spreadX");
+    setupSlider(spreadXSlider, particleProps.velVariation.x, function () {
+        particleProps.velVariation.x = parseInt(this.value);
+    });
+
+    const spreadYSlider = document.getElementById("spreadY");
+    setupSlider(spreadYSlider, particleProps.velVariation.y, function () {
+        particleProps.velVariation.y = parseInt(this.value);
     });
 }
 

@@ -26,14 +26,15 @@
         }
 
         main {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
+            display: grid;
+            grid-template-columns: max-content max-content;
+            place-content: center;
+            gap: 1rem 2rem;
+            text-align: left;
         }
 
-        main label input {
-            margin-left: 1rem;
+        main input {
+            width: 400px;
         }
 
         canvas {
@@ -54,10 +55,20 @@
     </header>
 
     <main>
-        <label>Size <input type="range" id="sizeProp" min="1" max="100"></label>
-        <label>Lifetime <input type="range" id="lifetime" min="100"
-                max="3000"></label>
-        <label>Velocity <input type="range" id="vel" min="-30" max="30"></label>
+        <label for="sizeProp">Size</label>
+        <input type="range" name="sizeProp" id="sizeProp" min="1" max="100">
+
+        <label for="lifetime">Lifetime</label>
+        <input type="range" name="lifetime" id="lifetime" min="100" max="3000">
+
+        <label for="vel">Velocity</label>
+        <input type="range" name="vel" id="vel" min="-30" max="30">
+
+        <label for="spreadX">Spread X</label>
+        <input type="range" name="spreadX" id="spreadX" max="30">
+
+        <label for="spreadY">Spread Y</label>
+        <input type="range" name="spreadY" id="spreadY" max="30">
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
