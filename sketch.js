@@ -3,7 +3,7 @@ let particleProps;
 let particleSystem;
 
 function setup() {
-    createCanvas(windowWidth, windowHeight);
+    createCanvas(windowWidth, getDocumentHeight());
 
     particleProps = new ParticleProps(
         mouseX, mouseY, 25, 25,
@@ -48,7 +48,18 @@ function draw() {
 }
 
 function windowResized() {
-    resizeCanvas(windowWidth, windowHeight);
+    resizeCanvas(windowWidth, getDocumentHeight());
+}
+
+function getDocumentHeight() {
+    const body = document.body;
+    const htmlElement = document.documentElement;
+    const height = Math.max(
+        body.scrollHeight, body.offsetHeight,
+        htmlElement.clientHeight, htmlElement.scrollHeight,
+        htmlElement.offsetHeight
+    );
+    return height;
 }
 
 function setupSlider(slider, initValue, onInput) {
